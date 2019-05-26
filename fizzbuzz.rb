@@ -1,20 +1,24 @@
 def fizz_buzz
-    [1,2,"Fizz",4,"Buzz","Fizz",7,8,"Fizz","Buzz"]
+    ["1","2","Fizz","4","Buzz","Fizz","7","8","Fizz","Buzz","11","Fizz","13","14",]
 end
 
 # 以下テストコード
 
-describe "" do
+describe "fizz_buzz" do
 
     it "3の倍数の代わりに”Fizz”を出力すること" do
-        2.step(fizz_buzz.size,3).each do |n|
-            expect(fizz_buzz[n]).to eq "Fizz"
+        fizz_buzz.each_with_index do |n, index|
+            if (index + 1) % 3 == 0
+                expect(n).to eq "Fizz"
+            end
         end
     end
 
     it "5の倍数の代わりに”Buzz”を出力すること" do
-        4.step(fizz_buzz.size,5).each do |n|
-            expect(fizz_buzz[n]).to eq "Buzz"
+        fizz_buzz.each_with_index do |n, index|
+            if (index + 1) % 5 == 0
+                expect(n).to eq "Buzz"
+            end
         end
     end
 
